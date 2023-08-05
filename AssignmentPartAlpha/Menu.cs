@@ -37,6 +37,7 @@ namespace AssignmentPartAlpha
             Console.WriteLine("View all Assignments Per Course (Press 7)");
             Console.WriteLine("View all Assignments Per Student (Press 8)");
             Console.WriteLine("View all Students with more than one course (Press 9)");
+            Console.WriteLine("View all Students who need to submit one or more Assignments at a week (Press 10)");
             Console.WriteLine("Exit (Press 0)");
             Console.ResetColor();
         }
@@ -222,7 +223,52 @@ namespace AssignmentPartAlpha
             }
         }
 
+        public void PrintStudentsSubmitingDay(List<Student> students, DateTime dateTime)
+        {
+            int start = 0;
+            int end = 0;
+            switch(dateTime.DayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    start = dateTime.DayOfYear;
+                    break;
+                case DayOfWeek.Tuesday:
+                    start = dateTime.DayOfYear - 1;
+                    break;
+                case DayOfWeek.Wednesday:
+                    start = dateTime.DayOfYear - 2;
+                    break;
+                case DayOfWeek.Thursday:
+                    start = dateTime.DayOfYear - 3;
+                    break;
+                case DayOfWeek.Friday:
+                    start = dateTime.DayOfYear - 4; 
+                    break;
+                case DayOfWeek.Saturday:
+                    start = dateTime.DayOfYear - 5;
+                    break;
+                case DayOfWeek.Sunday:
+                    start = dateTime.DayOfYear - 6;
+                    break;
+            }
+            end = start + 6;
 
 
+            foreach (var student in students)
+            {
+                foreach(var assignment in student.Assignments)
+                {
+                    if(assignment.SubDateTime.Year == dateTime.Year &&
+                       assignment.SubDateTime.DayOfYear >= start &&
+                       assignment.SubDateTime.DayOfYear <= end)
+                    {
+                        Console.WriteLine($"{student.LastName} {assignment.Title} {assignment.SubDateTime}");
+                    }
+                }
+
+            }
+        }
+
+        
     }
 }

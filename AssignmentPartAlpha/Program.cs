@@ -123,6 +123,11 @@ namespace AssignmentPartAlpha
                     case 9:
                         menu.PrintStudentsWithMoreThanOneCourse(students);
                         break;
+                    case 10:
+                        Console.WriteLine("Enter date(ex 2023-08-13): ");
+                        DateTime dt = Convert.ToDateTime(Console.ReadLine());
+                        menu.PrintStudentsSubmitingDay(students, dt);
+                        break;
                     default:
                         break;
                 }

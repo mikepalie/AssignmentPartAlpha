@@ -264,27 +264,31 @@ namespace AssignmentPartAlpha
             assignments[1].Students = new List<Student> { students[1], students[3], students[18], students[11], students[13] };
             assignments[2].Students = new List<Student> { students[1], students[3], students[7], students[10], students[19] };
             assignments[3].Students = new List<Student> { students[4], students[5], students[6], students[9], students[12] };
+            assignments[4].Students = new List<Student> { students[0], students[2], students[8], students[10], students[14] };
+            assignments[5].Students = new List<Student> { students[1], students[3], students[18], students[11], students[13] };
+            assignments[6].Students = new List<Student> { students[1], students[3], students[7], students[10], students[19] };
+            assignments[7].Students = new List<Student> { students[4], students[5], students[6], students[9], students[12] };
 
-            students[0].Assignments = new List<Assignment> { assignments[0] };
-            students[1].Assignments = new List<Assignment> { assignments[1], assignments[2] };
-            students[2].Assignments = new List<Assignment> { assignments[0] };
-            students[3].Assignments = new List<Assignment> { assignments[1], assignments[2] };
-            students[4].Assignments = new List<Assignment> { assignments[3] };
-            students[5].Assignments = new List<Assignment> { assignments[3] };
-            students[6].Assignments = new List<Assignment> { assignments[3] };
-            students[7].Assignments = new List<Assignment> { assignments[2] };
-            students[8].Assignments = new List<Assignment> { assignments[0] };
-            students[9].Assignments = new List<Assignment> { assignments[3] };
-            students[10].Assignments = new List<Assignment> { assignments[0], assignments[2] };
-            students[11].Assignments = new List<Assignment> { assignments[1] };
-            students[12].Assignments = new List<Assignment> { assignments[3] };
-            students[13].Assignments = new List<Assignment> { assignments[1] };
-            students[14].Assignments = new List<Assignment> { assignments[0] };
-            students[15].Assignments = new List<Assignment> { assignments[0] };
-            students[16].Assignments = new List<Assignment> { assignments[2] };
-            students[17].Assignments = new List<Assignment> { assignments[1] };
-            students[18].Assignments = new List<Assignment> { assignments[3] };
-            students[19].Assignments = new List<Assignment> { assignments[2] };
+            students[0].Assignments = new List<Assignment> { assignments[0], assignments[4] };
+            students[1].Assignments = new List<Assignment> { assignments[1], assignments[2], assignments[5], assignments[6] };
+            students[2].Assignments = new List<Assignment> { assignments[0], assignments[4] };
+            students[3].Assignments = new List<Assignment> { assignments[1], assignments[2], assignments[5], assignments[6] };
+            students[4].Assignments = new List<Assignment> { assignments[3], assignments[7] };
+            students[5].Assignments = new List<Assignment> { assignments[3], assignments[7] };
+            students[6].Assignments = new List<Assignment> { assignments[3], assignments[7] };
+            students[7].Assignments = new List<Assignment> { assignments[2], assignments[6] };
+            students[8].Assignments = new List<Assignment> { assignments[0], assignments[4] };
+            students[9].Assignments = new List<Assignment> { assignments[3], assignments[7] };
+            students[10].Assignments = new List<Assignment> { assignments[0], assignments[2], assignments[4], assignments[6] };
+            students[11].Assignments = new List<Assignment> { assignments[1], assignments[5] };
+            students[12].Assignments = new List<Assignment> { assignments[3], assignments[7] };
+            students[13].Assignments = new List<Assignment> { assignments[1], assignments[5] };
+            students[14].Assignments = new List<Assignment> { assignments[0], assignments[4] };
+            students[15].Assignments = new List<Assignment> { assignments[0], assignments[4] };
+            students[16].Assignments = new List<Assignment> { assignments[2], assignments[6] };
+            students[17].Assignments = new List<Assignment> { assignments[1], assignments[5] };
+            students[18].Assignments = new List<Assignment> { assignments[3], assignments[7] };
+            students[19].Assignments = new List<Assignment> { assignments[2], assignments[6] };
         }
     }
 }
