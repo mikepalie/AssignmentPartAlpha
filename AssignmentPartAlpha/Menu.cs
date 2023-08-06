@@ -19,11 +19,17 @@ namespace AssignmentPartAlpha
 
         public void ManuallyMenu()
         {
-            Console.WriteLine("Create Student (Press 1)");
-            Console.WriteLine("Create Trainer (Press 2)");
-            Console.WriteLine("Create Course (Press 3)");
-            Console.WriteLine("Create Assignment (Press 4)");
-            Console.WriteLine("View List of Students, Trainers, Courses, Assignments (Press 5)");
+            ViewLists();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Create Student (Press 11)");
+            Console.WriteLine("Create Trainer (Press 12)");
+            Console.WriteLine("Create Course (Press 13)");
+            Console.WriteLine("Create Assignment (Press 14)");
+            Console.WriteLine("Merge Students - Assignments (Press 15)");
+            Console.WriteLine("Merge Students - Courses (Press 16)");
+            Console.WriteLine("Merge Trainers - Courses (Press 17)");
+            Console.WriteLine("Merge Assignments - Courses (Press 18)");
+            Console.ResetColor();
         }
         public void ViewLists()
         {
@@ -48,6 +54,9 @@ namespace AssignmentPartAlpha
             Console.WriteLine("Students");
             Console.ResetColor();
 
+            if(students.Count == 0)
+                Console.WriteLine("No Result Found!");
+
             foreach (var stu in students)
             {
                 Console.WriteLine("================================");
@@ -67,6 +76,9 @@ namespace AssignmentPartAlpha
             Console.WriteLine("Trainers");
             Console.ResetColor();
 
+            if (trainers.Count == 0)
+                Console.WriteLine("No Result Found!");
+
             foreach (var tra in trainers)
             {
                 Console.WriteLine("================================");
@@ -83,6 +95,9 @@ namespace AssignmentPartAlpha
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Courses");
             Console.ResetColor();
+
+            if (courses.Count == 0)
+                Console.WriteLine("No Result Found!");
 
             foreach (var cou in courses)
             {
@@ -102,6 +117,9 @@ namespace AssignmentPartAlpha
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Assignments");
             Console.ResetColor();
+
+            if (assignments.Count == 0)
+                Console.WriteLine("No Result Found!");
 
             foreach (var asn in assignments)
             {
@@ -131,10 +149,18 @@ namespace AssignmentPartAlpha
                 Console.WriteLine("==================================");
                 Console.ResetColor();
 
-                foreach (var student in course.Students)
+                if (!Check.isEmptyList(course.Students))
                 {
-                    Console.WriteLine(student.LastName);
+                    foreach (var student in course.Students)
+                    {
+                        Console.WriteLine(student.LastName);
+                    }
                 }
+                else
+                {
+                    Console.WriteLine("No Student Found!");
+                }
+                
             }
         }
 
@@ -223,49 +249,57 @@ namespace AssignmentPartAlpha
             }
         }
 
-        public void PrintStudentsSubmitingDay(List<Student> students, DateTime dateTime)
+        public void PrintStudentsSubmitingDay(List<Student> students)
         {
+            Console.WriteLine("Enter date(ex 2023-08-13): ");
+            DateTime dt = Convert.ToDateTime(Console.ReadLine());
             int start = 0;
             int end = 0;
-            switch(dateTime.DayOfWeek)
+            switch(dt.DayOfWeek)
             {
                 case DayOfWeek.Monday:
-                    start = dateTime.DayOfYear;
+                    start = dt.DayOfYear;
                     break;
                 case DayOfWeek.Tuesday:
-                    start = dateTime.DayOfYear - 1;
+                    start = dt.DayOfYear - 1;
                     break;
                 case DayOfWeek.Wednesday:
-                    start = dateTime.DayOfYear - 2;
+                    start = dt.DayOfYear - 2;
                     break;
                 case DayOfWeek.Thursday:
-                    start = dateTime.DayOfYear - 3;
+                    start = dt.DayOfYear - 3;
                     break;
                 case DayOfWeek.Friday:
-                    start = dateTime.DayOfYear - 4; 
+                    start = dt.DayOfYear - 4; 
                     break;
                 case DayOfWeek.Saturday:
-                    start = dateTime.DayOfYear - 5;
+                    start = dt.DayOfYear - 5;
                     break;
                 case DayOfWeek.Sunday:
-                    start = dateTime.DayOfYear - 6;
+                    start = dt.DayOfYear - 6;
                     break;
             }
             end = start + 6;
 
-
+            bool foundResult = false;
             foreach (var student in students)
             {
                 foreach(var assignment in student.Assignments)
                 {
-                    if(assignment.SubDateTime.Year == dateTime.Year &&
+                    if(assignment.SubDateTime.Year == dt.Year &&
                        assignment.SubDateTime.DayOfYear >= start &&
                        assignment.SubDateTime.DayOfYear <= end)
                     {
                         Console.WriteLine($"{student.LastName} {assignment.Title} {assignment.SubDateTime}");
+                        foundResult = true;
                     }
+                   
                 }
 
+            }
+            if (!foundResult)
+            {
+                Console.WriteLine("No Result Found!");
             }
         }
 

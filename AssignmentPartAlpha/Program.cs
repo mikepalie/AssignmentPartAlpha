@@ -19,7 +19,6 @@ namespace AssignmentPartAlpha
 
             Menu menu = new Menu();
 
-
             menu.Start();
             int choiceOne = int.Parse(Console.ReadLine());
             Console.Clear();
@@ -32,41 +31,98 @@ namespace AssignmentPartAlpha
                     menu.ManuallyMenu();
                     choiceTwo = int.Parse(Console.ReadLine());
                     Console.Clear();
+                    //Console.Clear();
+                    //Console.WriteLine("View List of all Students (Press 1)");
+                    //Console.WriteLine("View List of all Trainers (Press 2)");
+                    //Console.WriteLine("View List of all Courses (Press 3)");
+                    //Console.WriteLine("View List of all Assignments (Press 4)");
+                    //Console.WriteLine("View all Students Per Course (Press 5)");
+                    //Console.WriteLine("View all Trainers Per Course (Press 6)");
+                    //Console.WriteLine("View all Assignments Per Course (Press 7)");
+                    //Console.WriteLine("View all Assignments Per Student (Press 8)");
+                    //Console.WriteLine("View all Students with more than one course (Press 9)");
+                    //Console.WriteLine("View all Students who need to submit one or more Assignments at a week (Press 10)");
+                    //Console.WriteLine("Exit (Press 0)");
+                    //Console.WriteLine("Create Student (Press 11)");
+                    //Console.WriteLine("Create Trainer (Press 12)");
+                    //Console.WriteLine("Create Course (Press 13)");
+                    //Console.WriteLine("Create Assignment (Press 14)");
+                    //Console.WriteLine("Merge Students - Assignments (Press 15)");
+                    //Console.WriteLine("Merge Students - Courses (Press 16)");
+                    //Console.WriteLine("Merge Trainers - Courses (Press 17)");
+                    //Console.WriteLine("Merge Assignments - Courses (Press 18)");
 
                     switch (choiceTwo)
                     {
                         case 1:
-                            Tuple<Student,string> s1 = Student.CreateStudent();
-                            students.Add(s1.Item1);
-                            foreach (var course in courses)
-                            {
-                                if(course.Stream == s1.Item2)
-                                {
-                                    s1.Item1.Courses.Add(course);
-                                    course.Students.Add(s1.Item1);
-                                }
-                            }
-
+                            menu.PrintAllStudents(students);
                             break;
                         case 2:
+                            menu.PrintAllTrainers(trainers);
+                            break;
+                        case 3:
+                            menu.PrintAllCourses(courses);
+                            break;
+                        case 4:
+                            menu.PrintAllAssignments(assignments);
+                            break;
+                        case 5:
+                            if (!Check.isEmptyList(courses))
+                            {
+                                menu.PrintStudentsPerCourse(courses);
+                            }
+                            else
+                            {
+                                Console.WriteLine("No Courses Found!");
+                            }
+                            break;
+                        case 6:
+                            menu.PrintTrainersPerCourse(courses);
+                            break;
+                        case 7:
+                            menu.PrintAssignmentsPerCourse(courses);
+                            break;
+                        case 8:
+                            menu.PrintAssignmentsPerStudent(students);
+                            break;
+                        case 9:
+                            menu.PrintStudentsWithMoreThanOneCourse(students);
+                            break;
+                        case 10:
+                            menu.PrintStudentsSubmitingDay(students);
+                            break;
+                        case 11:
+                            Student s1 = Student.CreateStudent();
+                            students.Add(s1);
+                            break;
+                        case 12:
                             Trainer t1 = Trainer.CreateTrainer();
                             trainers.Add(t1);
                             break;
-                        case 3:
+                        case 13:
                             Course c1 = Course.CreateCourse();
                             courses.Add(c1);
                             break;
-                        case 4:
+                        case 14:
                             Assignment a1 = Assignment.CreateAssignment();
                             assignments.Add(a1);
                             break;
-                        case 5:
+                        case 15:
+                            break;
+                        case 16:
+     
+                            break;
+                        case 17:
+                     
+                            break;
+                        case 18:
+                   
                             break;
                         default:
-                            break;
+                            break;                        
                     }
                     
-                } while (choiceTwo != 5);
+                } while (choiceTwo != 0);
 
             }
             else
@@ -86,52 +142,53 @@ namespace AssignmentPartAlpha
                 Thread.Sleep(2000);
 
                 Console.Clear();
+
+                int choiceThree;
+                do
+                {
+                    menu.ViewLists();
+                    choiceThree = int.Parse(Console.ReadLine());
+                    Console.Clear();
+                    switch (choiceThree)
+                    {
+                        case 1:
+                            menu.PrintAllStudents(students);
+                            break;
+                        case 2:
+                            menu.PrintAllTrainers(trainers);
+                            break;
+                        case 3:
+                            menu.PrintAllCourses(courses);
+                            break;
+                        case 4:
+                            menu.PrintAllAssignments(assignments);
+                            break;
+                        case 5:
+                            menu.PrintStudentsPerCourse(courses);
+                            break;
+                        case 6:
+                            menu.PrintTrainersPerCourse(courses);
+                            break;
+                        case 7:
+                            menu.PrintAssignmentsPerCourse(courses);
+                            break;
+                        case 8:
+                            menu.PrintAssignmentsPerStudent(students);
+                            break;
+                        case 9:
+                            menu.PrintStudentsWithMoreThanOneCourse(students);
+                            break;
+                        case 10:
+
+                            menu.PrintStudentsSubmitingDay(students);
+                            break;
+                        default:
+                            break;
+                    }
+                } while (choiceThree != 0);
             }
 
-            int choiceThree;
-            do
-            {
-                menu.ViewLists();
-                choiceThree = int.Parse(Console.ReadLine());
-                Console.Clear();
-                switch (choiceThree)
-                {
-                    case 1:
-                        menu.PrintAllStudents(students);
-                        break;
-                    case 2:
-                        menu.PrintAllTrainers(trainers);
-                        break;
-                    case 3:
-                        menu.PrintAllCourses(courses);
-                        break;
-                    case 4:
-                        menu.PrintAllAssignments(assignments);
-                        break;
-                    case 5:
-                        menu.PrintStudentsPerCourse(courses);
-                        break;
-                    case 6:
-                        menu.PrintTrainersPerCourse(courses);
-                        break;
-                    case 7:
-                        menu.PrintAssignmentsPerCourse(courses);
-                        break;
-                    case 8:
-                        menu.PrintAssignmentsPerStudent(students);
-                        break;
-                    case 9:
-                        menu.PrintStudentsWithMoreThanOneCourse(students);
-                        break;
-                    case 10:
-                        Console.WriteLine("Enter date(ex 2023-08-13): ");
-                        DateTime dt = Convert.ToDateTime(Console.ReadLine());
-                        menu.PrintStudentsSubmitingDay(students, dt);
-                        break;
-                    default:
-                        break;
-                }
-            } while (choiceThree != 0);
+            
 
         }
         

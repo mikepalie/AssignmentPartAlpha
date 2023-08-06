@@ -12,102 +12,102 @@ namespace AssignmentPartAlpha
         public List<Student> SyntheticStudents()
         {
             Student s1 = new Student() {
-                FirstName = "Mike", LastName = "Palie", DateOfBirth = new DateTime(1991,03,14),
+                StudentId = 1, FirstName = "Mike", LastName = "Palie", DateOfBirth = new DateTime(1991,03,14),
                 TuitionFees = 2000
             };  
 
             Student s2 = new Student() {
-                FirstName = "Jane", LastName = "Lubiz", DateOfBirth = new DateTime(1981,05,04),
+                StudentId = 2,FirstName = "Jane", LastName = "Lubiz", DateOfBirth = new DateTime(1981,05,04),
                 TuitionFees = 3000
             };      //2
 
             Student s3 = new Student() {
-                FirstName = "Nick", LastName = "Kalos", DateOfBirth = new DateTime(1990,10,24),
+                StudentId = 3,FirstName = "Nick", LastName = "Kalos", DateOfBirth = new DateTime(1990,10,24),
                 TuitionFees = 3000
             };      //3
 
             Student s4 = new Student() {
-                FirstName = "Phil", LastName = "Jones", DateOfBirth = new DateTime(1993,12,01), 
+                StudentId = 4, FirstName = "Phil", LastName = "Jones", DateOfBirth = new DateTime(1993,12,01), 
                 TuitionFees = 7000
             };      //4
 
             Student s5 = new Student() {
-                FirstName = "Helen", LastName = "Philips", DateOfBirth = new DateTime(1999,06,01),
+                StudentId = 5, FirstName = "Helen", LastName = "Philips", DateOfBirth = new DateTime(1999,06,01),
                 TuitionFees = 12000
             };  //5
 
             Student s6 = new Student() {
-                FirstName = "John", LastName = "Novers", DateOfBirth = new DateTime(2000,06,10),
+                StudentId = 6, FirstName = "John", LastName = "Novers", DateOfBirth = new DateTime(2000,06,10),
                 TuitionFees = 2500
             };     //6
 
             Student s7 = new Student() {
-                FirstName = "Hew", LastName = "Ceena", DateOfBirth = new DateTime(1978,09,20),
+                StudentId = 7, FirstName = "Hew", LastName = "Ceena", DateOfBirth = new DateTime(1978,09,20),
                 TuitionFees = 3800
             };       //7
 
             Student s8 = new Student() {
-                FirstName = "Gary", LastName = "Lomorov", DateOfBirth = new DateTime(1983,02,14), 
+                StudentId = 8, FirstName = "Gary", LastName = "Lomorov", DateOfBirth = new DateTime(1983,02,14), 
                 TuitionFees = 10000
             };   //8
 
             Student s9 = new Student() {
-                FirstName = "Dan", LastName = "Cally", DateOfBirth = new DateTime(1989,08,28),
+                StudentId = 9, FirstName = "Dan", LastName = "Cally", DateOfBirth = new DateTime(1989,08,28),
                 TuitionFees = 12000
             };      //9
 
             Student s10 = new Student() {
-                FirstName = "Mary", LastName = "Shein", DateOfBirth = new DateTime(1990,11,19), 
+                StudentId = 10, FirstName = "Mary", LastName = "Shein", DateOfBirth = new DateTime(1990,11,19), 
                 TuitionFees = 22000
             };    //10
 
             Student s11 = new Student() {
-                FirstName = "Eleni", LastName = "Rantou", DateOfBirth = new DateTime(1995,09,02), 
+                StudentId = 11, FirstName = "Eleni", LastName = "Rantou", DateOfBirth = new DateTime(1995,09,02), 
                 TuitionFees = 1000
             };   //11
 
             Student s12 = new Student() {
-                FirstName = "Maria", LastName = "Lappa", DateOfBirth = new DateTime(1996,06,18),
+                StudentId = 12, FirstName = "Maria", LastName = "Lappa", DateOfBirth = new DateTime(1996,06,18),
                 TuitionFees = 1200
             };    //12
 
             Student s13 = new Student() {
-                FirstName = "Ken", LastName = "Doherty", DateOfBirth = new DateTime(1998,08,17),
+                StudentId = 13, FirstName = "Ken", LastName = "Doherty", DateOfBirth = new DateTime(1998,08,17),
                 TuitionFees = 2400
             };    //13
 
             Student s14 = new Student() {
-                FirstName = "Mark", LastName = "Williams", DateOfBirth = new DateTime(1984,04,26), 
+                StudentId = 14, FirstName = "Mark", LastName = "Williams", DateOfBirth = new DateTime(1984,04,26), 
                 TuitionFees = 12000
             }; //14
 
             Student s15 = new Student() {
-                FirstName = "Toni", LastName = "Tavarez", DateOfBirth = new DateTime(1994,05,24),
+                StudentId = 15, FirstName = "Toni", LastName = "Tavarez", DateOfBirth = new DateTime(1994,05,24),
                 TuitionFees = 8000
             };   //15
 
             Student s16 = new Student() {
-                FirstName = "Frank", LastName = "Goulouise", DateOfBirth = new DateTime(1985,09,03),
+                StudentId = 16, FirstName = "Frank", LastName = "Goulouise", DateOfBirth = new DateTime(1985,09,03),
                 TuitionFees = 5400
             };    //16
 
             Student s17 = new Student() {
-                FirstName = "Lory", LastName = "Sinatra", DateOfBirth = new DateTime(1990,10,22),
+                StudentId = 17, FirstName = "Lory", LastName = "Sinatra", DateOfBirth = new DateTime(1990,10,22),
                 TuitionFees = 7000
             };       //17
 
             Student s18 = new Student() {
-                FirstName = "Kathrin", LastName = "Rose", DateOfBirth = new DateTime(1985,09,30),
+                StudentId = 18, FirstName = "Kathrin", LastName = "Rose", DateOfBirth = new DateTime(1985,09,30),
                 TuitionFees = 6300
             };       //18
 
             Student s19 = new Student() {
-                FirstName = "Sawn", LastName = "Steitham", DateOfBirth = new DateTime(1999,01,28),
+                StudentId = 19, FirstName = "Sawn", LastName = "Steitham", DateOfBirth = new DateTime(1999,01,28),
                 TuitionFees = 12000
             };     //19
 
             Student s20 = new Student() {
-                FirstName = "Keicy", LastName = "Corey", DateOfBirth = new DateTime(2003,03,16),
+                StudentId = 20, FirstName = "Keicy", LastName = "Corey", DateOfBirth = new DateTime(2003,03,16),
                 TuitionFees = 2200
             };        //20
 
@@ -118,14 +118,14 @@ namespace AssignmentPartAlpha
 
         public List<Trainer> SyntheticTrainers()
         {
-            Trainer t1 = new Trainer() { FirstName = "Dimitris", LastName = "Dedes", subject = "C#" };
-            Trainer t2 = new Trainer() { FirstName = "Ioanna", LastName = "Deli", subject = "Java" };
-            Trainer t3 = new Trainer() { FirstName = "Xristina", LastName = "Moustaka", subject = "C#" };
-            Trainer t4 = new Trainer() { FirstName = "Kostas", LastName = "Nioras", subject = "Python" };
-            Trainer t5 = new Trainer() { FirstName = "Evagelia", LastName = "Salata", subject = "Java" };
-            Trainer t6 = new Trainer() { FirstName = "Xristos", LastName = "Tsaousis", subject = "C#" };
-            Trainer t7 = new Trainer() { FirstName = "Eleftheria", LastName = "Moutakidou", subject = "Python" };
-            Trainer t8 = new Trainer() { FirstName = "Xaralampos", LastName = "Ioannou", subject = "C#" };
+            Trainer t1 = new Trainer() { TrainerId = 1, FirstName = "Dimitris", LastName = "Dedes", subject = "C#" };
+            Trainer t2 = new Trainer() { TrainerId = 2, FirstName = "Ioanna", LastName = "Deli", subject = "Java" };
+            Trainer t3 = new Trainer() { TrainerId = 3, FirstName = "Xristina", LastName = "Moustaka", subject = "C#" };
+            Trainer t4 = new Trainer() { TrainerId = 4, FirstName = "Kostas", LastName = "Nioras", subject = "Python" };
+            Trainer t5 = new Trainer() { TrainerId = 5, FirstName = "Evagelia", LastName = "Salata", subject = "Java" };
+            Trainer t6 = new Trainer() { TrainerId = 6, FirstName = "Xristos", LastName = "Tsaousis", subject = "C#" };
+            Trainer t7 = new Trainer() { TrainerId = 7, FirstName = "Eleftheria", LastName = "Moutakidou", subject = "Python" };
+            Trainer t8 = new Trainer() { TrainerId = 8, FirstName = "Xaralampos", LastName = "Ioannou", subject = "C#" };
 
             List<Trainer> trainers = new List<Trainer>() { t1, t2, t3, t4, t5, t6, t7, t8 };
 
@@ -134,23 +134,23 @@ namespace AssignmentPartAlpha
 
         public List<Course> SyntheticCourses()
         {
-            Course c0 = new Course() { Title = "C#", Stream = "CB8", Type = "Full Time", 
+            Course c0 = new Course() { CourseId = 1, Title = "C#", Stream = "CB8", Type = "Full Time", 
                 StartDate = new DateTime(2023, 08, 12),
                 EndDate = new DateTime(2024, 02, 12) ,
                 
             };
 
-            Course c1 = new Course() { Title = "Java", Stream = "CB9", Type = "Part Time", 
+            Course c1 = new Course() { CourseId = 2, Title = "Java", Stream = "CB9", Type = "Part Time", 
                 StartDate = new DateTime(2023, 08, 12),
                 EndDate = new DateTime(2023, 11, 12),
                
             };
-            Course c2 = new Course() { Title = "Java", Stream = "CB10", Type = "Full Time", 
+            Course c2 = new Course() { CourseId = 3, Title = "Java", Stream = "CB10", Type = "Full Time", 
                 StartDate = new DateTime(2023, 10, 22),
                 EndDate = new DateTime(2024, 04, 22), 
                
             };
-            Course c3 = new Course() { Title = "C#", Stream = "CB11", Type = "Part Time", 
+            Course c3 = new Course() { CourseId = 4, Title = "C#", Stream = "CB11", Type = "Part Time", 
                 StartDate = new DateTime(2022, 02, 15),
                 EndDate = new DateTime(2022, 05, 15),
                 
@@ -163,14 +163,14 @@ namespace AssignmentPartAlpha
 
         public List<Assignment> SyntheticAssignments()
         {
-            Assignment a1 = new Assignment() { Title = "Donut App", Description = "An application about a donuts shop", SubDateTime = new DateTime(2023,11,13), OralMark = 88, TotalMark = 86};
-            Assignment a2 = new Assignment() { Title = "Weather Forecast", Description = "An application about the weather in your country", SubDateTime = new DateTime(2023,02,20), OralMark = 98, TotalMark = 96};
-            Assignment a3 = new Assignment() { Title = "Soccer Maniac", Description = "A trivial game about soccer", SubDateTime = new DateTime(2023,01,10), OralMark = 98, TotalMark = 96};
-            Assignment a4 = new Assignment() { Title = "Movie Place", Description = "A site about movies of a  Cinema", SubDateTime = new DateTime(2023,03,23), OralMark = 68, TotalMark = 76};
-            Assignment a5 = new Assignment() { Title = "Pokemon", Description = "A game with pokemon cards", SubDateTime = new DateTime(2023,02,23), OralMark = 88, TotalMark = 86};
-            Assignment a6 = new Assignment() { Title = "Looney Tunes", Description = "A shop with Looney tunes stickers", SubDateTime = new DateTime(2023,01,23), OralMark = 78, TotalMark = 96};
-            Assignment a7 = new Assignment() { Title = "Travel Agent", Description = "A site about holiday tickets", SubDateTime = new DateTime(2023,03,23), OralMark = 90, TotalMark = 87};
-            Assignment a8 = new Assignment() { Title = "Jobs", Description = "A site with job opportunities", SubDateTime = new DateTime(2023,06,23), OralMark = 56, TotalMark = 78};
+            Assignment a1 = new Assignment() { AssignmentId = 1, Title = "Donut App", Description = "An application about a donuts shop", SubDateTime = new DateTime(2023,11,13), OralMark = 88, TotalMark = 86};
+            Assignment a2 = new Assignment() { AssignmentId = 2, Title = "Weather Forecast", Description = "An application about the weather in your country", SubDateTime = new DateTime(2023,02,20), OralMark = 98, TotalMark = 96};
+            Assignment a3 = new Assignment() { AssignmentId = 3, Title = "Soccer Maniac", Description = "A trivial game about soccer", SubDateTime = new DateTime(2023,01,10), OralMark = 98, TotalMark = 96};
+            Assignment a4 = new Assignment() { AssignmentId = 4, Title = "Movie Place", Description = "A site about movies of a  Cinema", SubDateTime = new DateTime(2023,03,23), OralMark = 68, TotalMark = 76};
+            Assignment a5 = new Assignment() { AssignmentId = 5, Title = "Pokemon", Description = "A game with pokemon cards", SubDateTime = new DateTime(2023,02,23), OralMark = 88, TotalMark = 86};
+            Assignment a6 = new Assignment() { AssignmentId = 6, Title = "Looney Tunes", Description = "A shop with Looney tunes stickers", SubDateTime = new DateTime(2023,01,23), OralMark = 78, TotalMark = 96};
+            Assignment a7 = new Assignment() { AssignmentId = 7, Title = "Travel Agent", Description = "A site about holiday tickets", SubDateTime = new DateTime(2023,03,23), OralMark = 90, TotalMark = 87};
+            Assignment a8 = new Assignment() { AssignmentId = 8, Title = "Jobs", Description = "A site with job opportunities", SubDateTime = new DateTime(2023,06,23), OralMark = 56, TotalMark = 78};
 
 
             List<Assignment> assignments = new List<Assignment>() { a1, a2, a3, a4, a5, a6, a7, a8 };

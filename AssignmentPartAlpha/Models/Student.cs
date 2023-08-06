@@ -17,7 +17,7 @@ namespace AssignmentPartAlpha.Models
         public  List<Course> Courses { get; set; }
         public  List<Assignment> Assignments { get; set; }
 
-        public static Tuple<Student,string> CreateStudent()
+        public static Student CreateStudent()
         {
             
             Student s1 = new Student();
@@ -33,10 +33,7 @@ namespace AssignmentPartAlpha.Models
             s1.TuitionFees = Convert.ToDouble(Console.ReadLine());
             s1.Courses = new List<Course>();
 
-            Console.WriteLine("Student's Course Stream(ex. CB8): ");
-            string course = Console.ReadLine();
-
-            Tuple<Student,string> result = new Tuple<Student, string>(s1 , course);
+           
 
             Console.Clear();
 
@@ -44,7 +41,7 @@ namespace AssignmentPartAlpha.Models
             Thread.Sleep(2000);
 
             Console.Clear();
-            return result;
+            return s1;
         }
     }
      
