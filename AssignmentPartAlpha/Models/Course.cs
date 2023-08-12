@@ -9,6 +9,7 @@ namespace AssignmentPartAlpha.Models
 {
     public class Course
     {
+        private static int nextId = 1;
         public int CourseId { get; set; }
         public string Title { get; set; }
         public string Stream { get; set; }
@@ -36,7 +37,9 @@ namespace AssignmentPartAlpha.Models
             Console.WriteLine("Course's EndDate(ex 2023-11-13): ");
             c1.EndDate = Convert.ToDateTime(Console.ReadLine());
             c1.Students = new List<Student>();
-
+            c1.Trainers = new List<Trainer>();
+            c1.Assignments = new List<Assignment>();
+            c1.CourseId = nextId++;
            
            
 

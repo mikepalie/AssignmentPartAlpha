@@ -9,6 +9,7 @@ namespace AssignmentPartAlpha.Models
 {
     public class Assignment
     {
+        private static int nextId = 1;
         public int AssignmentId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -33,6 +34,7 @@ namespace AssignmentPartAlpha.Models
             a1.OralMark = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Assignment's Total Mark(0 - 100): ");
             a1.TotalMark = Convert.ToDouble(Console.ReadLine());
+            a1.AssignmentId = nextId++;
 
 
             Console.Clear();

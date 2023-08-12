@@ -9,6 +9,7 @@ namespace AssignmentPartAlpha.Models
 {
     public class Student
     {
+        private static int nextId = 1;
         public int StudentId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -22,9 +23,14 @@ namespace AssignmentPartAlpha.Models
             
             Student s1 = new Student();
 
+            do
+            {
+                Console.WriteLine("Student's Firstname: ");
+                s1.FirstName = Console.ReadLine();
 
-            Console.WriteLine("Student's Firstname: ");
-            s1.FirstName = Console.ReadLine();
+            } while (true);
+            
+
             Console.WriteLine("Student's Lastname: ");
             s1.LastName = Console.ReadLine();
             Console.WriteLine("Student's Date of Birth(ex. 1991-03-14): ");
@@ -32,7 +38,8 @@ namespace AssignmentPartAlpha.Models
             Console.WriteLine("Student's Tuition Fees: ");
             s1.TuitionFees = Convert.ToDouble(Console.ReadLine());
             s1.Courses = new List<Course>();
-
+            s1.Assignments = new List<Assignment>();
+            s1.StudentId = nextId++;
            
 
             Console.Clear();

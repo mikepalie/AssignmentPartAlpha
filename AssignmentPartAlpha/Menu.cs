@@ -25,10 +25,10 @@ namespace AssignmentPartAlpha
             Console.WriteLine("Create Trainer (Press 12)");
             Console.WriteLine("Create Course (Press 13)");
             Console.WriteLine("Create Assignment (Press 14)");
-            Console.WriteLine("Merge Students - Assignments (Press 15)");
-            Console.WriteLine("Merge Students - Courses (Press 16)");
-            Console.WriteLine("Merge Trainers - Courses (Press 17)");
-            Console.WriteLine("Merge Assignments - Courses (Press 18)");
+            Console.WriteLine("Merge Students - Courses (Press 15)");
+            Console.WriteLine("Merge Trainers - Courses (Press 16)");
+            Console.WriteLine("Merge Assignments - Courses (Press 17)");
+            Console.WriteLine("Merge Assignments - Students (Press 18)");
             Console.ResetColor();
         }
         public void ViewLists()
@@ -60,6 +60,7 @@ namespace AssignmentPartAlpha
             foreach (var stu in students)
             {
                 Console.WriteLine("================================");
+                Console.WriteLine($"Student's Id: {stu.StudentId}");
                 Console.WriteLine($"Firstname: {stu.FirstName }");
                 Console.WriteLine($"Lastname: {stu.LastName }");
                 Console.WriteLine($"Date of Birth: {stu.DateOfBirth }");
@@ -82,6 +83,7 @@ namespace AssignmentPartAlpha
             foreach (var tra in trainers)
             {
                 Console.WriteLine("================================");
+                Console.WriteLine($"Trainer's Id: {tra.TrainerId}");
                 Console.WriteLine($"Firstname: {tra.FirstName}");
                 Console.WriteLine($"Lastname: {tra.LastName}");
                 Console.WriteLine($"Subject: {tra.subject}");
@@ -102,6 +104,7 @@ namespace AssignmentPartAlpha
             foreach (var cou in courses)
             {
                 Console.WriteLine("================================");
+                Console.WriteLine($"Course's Id: {cou.CourseId}");
                 Console.WriteLine($"Title: {cou.Title}");
                 Console.WriteLine($"Stream: {cou.Stream}");
                 Console.WriteLine($"Type: {cou.Type}");
@@ -124,6 +127,7 @@ namespace AssignmentPartAlpha
             foreach (var asn in assignments)
             {
                 Console.WriteLine("================================");
+                Console.WriteLine($"Assignment's Id: {asn.AssignmentId}");
                 Console.WriteLine($"Title: {asn.Title}");
                 Console.WriteLine($"Description: {asn.Description}");
                 Console.WriteLine($"SubDateTime: {asn.SubDateTime}");
@@ -303,6 +307,135 @@ namespace AssignmentPartAlpha
             }
         }
 
-        
+        public void MergeStudentsCourses(List<Student> students, List<Course> courses)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Choose from above Student and Course you want to merge");
+
+            PrintAllStudents(students);
+            PrintAllCourses(courses);
+
+            Console.WriteLine("Enter Student's Id :");
+            int stuId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Course's Id :");
+            int couId = Convert.ToInt32(Console.ReadLine());
+
+            Student student1 = new Student();
+            
+            foreach (var stu in students)
+            {
+                if(stuId == stu.StudentId)
+                {
+                    student1 = stu;
+                }
+            }
+
+            foreach (var course in courses)
+            {
+                if (couId == course.CourseId)
+                {
+                    course.Students.Add(student1);
+                }
+            }
+        }
+
+        public void MergeTrainersCourses(List<Trainer> trainers, List<Course> courses)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Choose from above Trainer and Course you want to merge");
+
+            PrintAllTrainers(trainers);
+            PrintAllCourses(courses);
+
+            Console.WriteLine("Enter Trainer's Id :");
+            int traId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Course's Id :");
+            int couId = Convert.ToInt32(Console.ReadLine());
+
+            Trainer trainer1 = new Trainer();
+
+            foreach (var tra in trainers)
+            {
+                if (traId == tra.TrainerId)
+                {
+                    trainer1 = tra;
+                }
+            }
+
+            foreach (var course in courses)
+            {
+                if (couId == course.CourseId)
+                {
+                    course.Trainers.Add(trainer1);
+                }
+            }
+        }
+
+        public void MergeAssignmentsCourses(List<Assignment> assignments, List<Course> courses)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Choose from above Assignment and Course you want to merge");
+
+            PrintAllAssignments(assignments);
+            PrintAllCourses(courses);
+
+            Console.WriteLine("Enter Assignment's Id :");
+            int assId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Course's Id :");
+            int couId = Convert.ToInt32(Console.ReadLine());
+
+            Assignment assignment1 = new Assignment();
+
+
+            foreach (var ass in assignments)
+            {
+                if (assId == ass.AssignmentId)
+                {
+                    assignment1 = ass;
+                }
+            }
+
+            foreach (var course in courses)
+            {
+                if (couId == course.CourseId)
+                {
+                    course.Assignments.Add(assignment1);
+                }
+            }
+
+        }
+
+        public void MergeAssignmentsStudents(List<Assignment> assignments, List<Student> students)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Choose from above Assignment and Student you want to merge");
+
+            PrintAllAssignments(assignments);
+            PrintAllStudents(students);
+
+            Console.WriteLine("Enter Assignment's Id :");
+            int assId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Student's Id :");
+            int stuId = Convert.ToInt32(Console.ReadLine());
+
+            Assignment assignment1 = new Assignment();
+
+            foreach (var ass in assignments)
+            {
+                if (assId == ass.AssignmentId)
+                {
+                    assignment1 = ass;
+                }
+            }
+
+            foreach (var stu in students)
+            {
+                if (stuId == stu.StudentId)
+                {
+                    stu.Assignments.Add(assignment1);
+                }
+            }
+        }
+
     }
 }
