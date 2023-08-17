@@ -35,6 +35,27 @@ namespace AssignmentPartAlpha
             }
         }
 
-        
+        public static bool isValidInput2(string str, out int choiceTwo)
+        {
+            if (int.TryParse(str, out choiceTwo))
+            {
+                if (choiceTwo < 0 || choiceTwo > 18)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Your choice should between 0 to 18 !");
+                    return false;
+                }
+                else
+                    return true;
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Your input isn't a number !");
+                return false;
+            }
+        }
+
+
     }
 }

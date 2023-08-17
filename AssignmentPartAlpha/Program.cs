@@ -21,6 +21,9 @@ namespace AssignmentPartAlpha
             
             int choiceOne;
             bool isValid1;
+
+            int choiceTwo;
+            bool isValid2;
             do
             {
                 menu.Start();
@@ -33,11 +36,16 @@ namespace AssignmentPartAlpha
 
             if (choiceOne == 1)
             {
-                int choiceTwo;
                 do
                 {
-                    menu.ManuallyMenu();
-                    choiceTwo = int.Parse(Console.ReadLine());
+
+
+                    do
+                    {
+                        menu.ManuallyMenu();
+                        isValid2 = Check.isValidInput2(Console.ReadLine(), out choiceTwo);
+
+                    } while (!isValid2);
                     Console.Clear();
 
                     switch (choiceTwo)
@@ -63,16 +71,34 @@ namespace AssignmentPartAlpha
                             break;
 
                         case 6:
-                            menu.PrintTrainersPerCourse(courses);
+
+                            if (!Check.isEmptyList(courses))
+                                menu.PrintTrainersPerCourse(courses);
+                            else
+                                Console.WriteLine("No Courses Found!");
                             break;
+                            
                         case 7:
-                            menu.PrintAssignmentsPerCourse(courses);
+
+                            if (!Check.isEmptyList(courses))
+                                menu.PrintAssignmentsPerCourse(courses);
+                            else
+                                Console.WriteLine("No Courses Found!");
                             break;
+
                         case 8:
-                            menu.PrintAssignmentsPerStudent(students);
+
+                            if(!Check.isEmptyList(students))
+                                menu.PrintAssignmentsPerStudent(students);
+                            else
+                                Console.WriteLine("No Students Found!");
                             break;
+
                         case 9:
-                            menu.PrintStudentsWithMoreThanOneCourse(students);
+                            if(!Check.isEmptyList(students))
+                                menu.PrintStudentsWithMoreThanOneCourse(students);
+                            else
+                                Console.WriteLine("No Students Found");
                             break;
                         case 10:
                             menu.PrintStudentsSubmitingDay(students);
@@ -184,5 +210,4 @@ namespace AssignmentPartAlpha
 
 
 
-//Console.WriteLine("enter your choice 1 or two: ");
-//int input = int.TryParse(Console.ReadLine());
+

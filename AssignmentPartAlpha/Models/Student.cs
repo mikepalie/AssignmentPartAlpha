@@ -23,12 +23,11 @@ namespace AssignmentPartAlpha.Models
             
             Student s1 = new Student();
 
-            do
-            {
+
                 Console.WriteLine("Student's Firstname: ");
                 s1.FirstName = Console.ReadLine();
 
-            } while (true);
+
             
 
             Console.WriteLine("Student's Lastname: ");

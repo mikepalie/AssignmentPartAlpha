@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AssignmentPartAlpha
@@ -238,18 +239,24 @@ namespace AssignmentPartAlpha
             Console.WriteLine($"Students with more than one course: ");
             Console.WriteLine("==================================");
             Console.ResetColor();
+            bool thereIs = false;
             foreach (var student in students)
             {
                 if(student.Courses.Count > 1)
                 {
+                    thereIs = true; 
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine(student.LastName);
                     Console.ResetColor();
-                }
-                foreach (var course in student.Courses)
-                {
-                    Console.WriteLine(course.Title + " " + course.Type);
-                }
+                    foreach (var course in student.Courses)
+                    {
+                        Console.WriteLine(course.Title + " " + course.Type);
+                    }
+                }               
+            }
+            if (!thereIs)
+            {
+                Console.WriteLine("No Results Found! ");
             }
         }
 
@@ -315,10 +322,14 @@ namespace AssignmentPartAlpha
             PrintAllStudents(students);
             PrintAllCourses(courses);
 
+            Console.ForegroundColor = ConsoleColor.Green;
+
             Console.WriteLine("Enter Student's Id :");
             int stuId = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter Course's Id :");
             int couId = Convert.ToInt32(Console.ReadLine());
+
+            Console.ResetColor();
 
             Student student1 = new Student();
             
@@ -335,6 +346,14 @@ namespace AssignmentPartAlpha
                 if (couId == course.CourseId)
                 {
                     course.Students.Add(student1);
+                    student1.Courses.Add(course);
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"{course.Title } successfully merged with {student1.LastName}");
+                    Console.ResetColor();
+
+                    Thread.Sleep(2000);
+                    Console.Clear();
                 }
             }
         }
