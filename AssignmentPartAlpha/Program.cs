@@ -30,7 +30,7 @@ namespace AssignmentPartAlpha
                 isValid1 = Check.isValidInput1(Console.ReadLine(),out choiceOne);
                     
             } while (!isValid1);
-            
+            Console.Clear();
            
 
 
@@ -101,7 +101,10 @@ namespace AssignmentPartAlpha
                                 Console.WriteLine("No Students Found");
                             break;
                         case 10:
-                            menu.PrintStudentsSubmitingDay(students);
+                            if(!Check.isEmptyList(students))
+                                menu.PrintStudentsSubmitingDay(students);
+                            else
+                                Console.WriteLine("No Students Found");
                             break;
                         case 11:
                             Student s1 = Student.CreateStudent();

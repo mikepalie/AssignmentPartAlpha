@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AssignmentPartAlpha
@@ -56,6 +57,24 @@ namespace AssignmentPartAlpha
             }
         }
 
+        public static bool isDateTimeType(string str)
+        {
+            return DateTime.TryParse(str, out _);
+        }
 
+        public static bool isValidName(string str)
+        {
+            Regex regex = new Regex("^[a-zA-Z]+$");
+            return regex.IsMatch(str);
+        }
+        public static bool isDouble(string str)
+        {
+            return Double.TryParse(str, out _);
+        }
+
+        public static bool isInt(string str)
+        {
+            return Int32.TryParse(str, out _);
+        }
     }
 }
