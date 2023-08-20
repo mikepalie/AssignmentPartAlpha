@@ -181,41 +181,41 @@ namespace AssignmentPartAlpha
 
         public void StudentsCourses(List<Student> students, List<Course> courses)
         {
-            students[0].Courses = new List<Course> { courses[0], courses[1] };
-            students[1].Courses = new List<Course> { courses[1], courses[2] };
-            students[2].Courses = new List<Course> { courses[0], courses[3] };
-            students[3].Courses = new List<Course> { courses[1], courses[3] };
-            students[4].Courses = new List<Course> { courses[1], courses[2] };
-            students[5].Courses = new List<Course> { courses[2], courses[3] };
-            students[6].Courses = new List<Course> { courses[0], courses[1] };
-            students[7].Courses = new List<Course> { courses[0], courses[2] };
-            students[8].Courses = new List<Course> { courses[1], courses[2] };
-            students[9].Courses = new List<Course> { courses[2], courses[3] };
-            students[10].Courses = new List<Course> { courses[3], courses[1] };
-            students[11].Courses = new List<Course> { courses[1], courses[0] };
-            students[12].Courses = new List<Course> { courses[2], courses[0] };
-            students[13].Courses = new List<Course> { courses[3], courses[2] };
-            students[14].Courses = new List<Course> { courses[2], courses[1] };
-            students[15].Courses = new List<Course> { courses[1], courses[3] };
-            students[16].Courses = new List<Course> { courses[0], courses[2] };
-            students[17].Courses = new List<Course> { courses[0], courses[3] };
-            students[18].Courses = new List<Course> { courses[3], courses[0] };
-            students[19].Courses = new List<Course> { courses[2], courses[3] };
+            students[0].Courses = new HashSet<Course> { courses[0], courses[1] };
+            students[1].Courses = new HashSet<Course> { courses[1], courses[2] };
+            students[2].Courses = new HashSet<Course> { courses[0], courses[3] };
+            students[3].Courses = new HashSet<Course> { courses[1], courses[3] };
+            students[4].Courses = new HashSet<Course> { courses[1], courses[2] };
+            students[5].Courses = new HashSet<Course> { courses[2], courses[3] };
+            students[6].Courses = new HashSet<Course> { courses[0], courses[1] };
+            students[7].Courses = new HashSet<Course> { courses[0], courses[2] };
+            students[8].Courses = new HashSet<Course> { courses[1], courses[2] };
+            students[9].Courses = new HashSet<Course> { courses[2], courses[3] };
+            students[10].Courses = new HashSet<Course> { courses[3], courses[1] };
+            students[11].Courses = new HashSet<Course> { courses[1], courses[0] };
+            students[12].Courses = new HashSet<Course> { courses[2], courses[0] };
+            students[13].Courses = new HashSet<Course> { courses[3], courses[2] };
+            students[14].Courses = new HashSet<Course> { courses[2], courses[1] };
+            students[15].Courses = new HashSet<Course> { courses[1], courses[3] };
+            students[16].Courses = new HashSet<Course> { courses[0], courses[2] };
+            students[17].Courses = new HashSet<Course> { courses[0], courses[3] };
+            students[18].Courses = new HashSet<Course> { courses[3], courses[0] };
+            students[19].Courses = new HashSet<Course> { courses[2], courses[3] };
 
 
-            courses[0].Students = new List<Student>
+            courses[0].Students = new HashSet<Student>
             {
                 students[0], students[2], students[6], students[7],students[11], students[12], students[16], students[17], students[18]
             };
-            courses[1].Students = new List<Student>
+            courses[1].Students = new HashSet<Student>
             {
                 students[0], students[1], students[3], students[4],students[6], students[8], students[10], students[11], students[14],students[15]
             };
-            courses[2].Students = new List<Student>
+            courses[2].Students = new HashSet<Student>
             {
                 students[1], students[4], students[5], students[7],students[8], students[9], students[12], students[13], students[14], students[16], students[19]
             };
-            courses[3].Students = new List<Student>
+            courses[3].Students = new HashSet<Student>
             {
                 students[2], students[3], students[5], students[9],students[10], students[13], students[15], students[17], students[18], students[19]
             };
@@ -224,27 +224,27 @@ namespace AssignmentPartAlpha
 
         public void TrainersCourses(List<Trainer> trainers, List<Course> courses)
         {
-            trainers[0].Courses = new List<Course> { courses[1], courses[2] };
-            trainers[1].Courses = new List<Course> { courses[0], courses[3] };
-            trainers[2].Courses = new List<Course> { courses[1] };
-            trainers[3].Courses = new List<Course> { courses[2], courses[3] };
-            trainers[4].Courses = new List<Course> { courses[1], courses[2] };
-            trainers[5].Courses = new List<Course> { courses[0] };
-            trainers[6].Courses = new List<Course> { courses[2], courses[3] };
-            trainers[7].Courses = new List<Course> { courses[2] };
+            trainers[0].Courses = new HashSet<Course> { courses[1], courses[2] };
+            trainers[1].Courses = new HashSet<Course> { courses[0], courses[3] };
+            trainers[2].Courses = new HashSet<Course> { courses[1] };
+            trainers[3].Courses = new HashSet<Course> { courses[2], courses[3] };
+            trainers[4].Courses = new HashSet<Course> { courses[1], courses[2] };
+            trainers[5].Courses = new HashSet<Course> { courses[0] };
+            trainers[6].Courses = new HashSet<Course> { courses[2], courses[3] };
+            trainers[7].Courses = new HashSet<Course> { courses[2] };
 
-            courses[0].Trainers = new List<Trainer> { trainers[1], trainers[5] }; 
-            courses[1].Trainers = new List<Trainer> { trainers[0], trainers[2], trainers[4] }; 
-            courses[2].Trainers = new List<Trainer> { trainers[0], trainers[3], trainers[4], trainers[6], trainers[7] }; 
-            courses[3].Trainers = new List<Trainer> { trainers[1], trainers[3], trainers[6] }; 
+            courses[0].Trainers = new HashSet<Trainer> { trainers[1], trainers[5] }; 
+            courses[1].Trainers = new HashSet<Trainer> { trainers[0], trainers[2], trainers[4] }; 
+            courses[2].Trainers = new HashSet<Trainer> { trainers[0], trainers[3], trainers[4], trainers[6], trainers[7] }; 
+            courses[3].Trainers = new HashSet<Trainer> { trainers[1], trainers[3], trainers[6] }; 
         }
 
         public void AssignmentsCourses(List<Assignment> assignments, List<Course> courses)
         {
-            courses[0].Assignments = new List<Assignment> { assignments[0], assignments[2] };
-            courses[1].Assignments = new List<Assignment> { assignments[1], assignments[3] };
-            courses[2].Assignments = new List<Assignment> { assignments[5], assignments[7] };
-            courses[3].Assignments = new List<Assignment> { assignments[4], assignments[6] };
+            courses[0].Assignments = new HashSet<Assignment> { assignments[0], assignments[2] };
+            courses[1].Assignments = new HashSet<Assignment> { assignments[1], assignments[3] };
+            courses[2].Assignments = new HashSet<Assignment> { assignments[5], assignments[7] };
+            courses[3].Assignments = new HashSet<Assignment> { assignments[4], assignments[6] };
 
             assignments[0].Course = courses[0];
             assignments[1].Course = courses[1];
@@ -260,35 +260,35 @@ namespace AssignmentPartAlpha
 
         public void AssignmentsStudents(List<Assignment> assignments, List<Student> students)
         {
-            assignments[0].Students = new List<Student> { students[0], students[2], students[8], students[10], students[14] };
-            assignments[1].Students = new List<Student> { students[1], students[3], students[18], students[11], students[13] };
-            assignments[2].Students = new List<Student> { students[1], students[3], students[7], students[10], students[19] };
-            assignments[3].Students = new List<Student> { students[4], students[5], students[6], students[9], students[12] };
-            assignments[4].Students = new List<Student> { students[0], students[2], students[8], students[10], students[14] };
-            assignments[5].Students = new List<Student> { students[1], students[3], students[18], students[11], students[13] };
-            assignments[6].Students = new List<Student> { students[1], students[3], students[7], students[10], students[19] };
-            assignments[7].Students = new List<Student> { students[4], students[5], students[6], students[9], students[12] };
+            assignments[0].Students = new HashSet<Student> { students[0], students[2], students[8], students[10], students[14] };
+            assignments[1].Students = new HashSet<Student> { students[1], students[3], students[18], students[11], students[13] };
+            assignments[2].Students = new HashSet<Student> { students[1], students[3], students[7], students[10], students[19] };
+            assignments[3].Students = new HashSet<Student> { students[4], students[5], students[6], students[9], students[12] };
+            assignments[4].Students = new HashSet<Student> { students[0], students[2], students[8], students[10], students[14] };
+            assignments[5].Students = new HashSet<Student> { students[1], students[3], students[18], students[11], students[13] };
+            assignments[6].Students = new HashSet<Student> { students[1], students[3], students[7], students[10], students[19] };
+            assignments[7].Students = new HashSet<Student> { students[4], students[5], students[6], students[9], students[12] };
 
-            students[0].Assignments = new List<Assignment> { assignments[0], assignments[4] };
-            students[1].Assignments = new List<Assignment> { assignments[1], assignments[2], assignments[5], assignments[6] };
-            students[2].Assignments = new List<Assignment> { assignments[0], assignments[4] };
-            students[3].Assignments = new List<Assignment> { assignments[1], assignments[2], assignments[5], assignments[6] };
-            students[4].Assignments = new List<Assignment> { assignments[3], assignments[7] };
-            students[5].Assignments = new List<Assignment> { assignments[3], assignments[7] };
-            students[6].Assignments = new List<Assignment> { assignments[3], assignments[7] };
-            students[7].Assignments = new List<Assignment> { assignments[2], assignments[6] };
-            students[8].Assignments = new List<Assignment> { assignments[0], assignments[4] };
-            students[9].Assignments = new List<Assignment> { assignments[3], assignments[7] };
-            students[10].Assignments = new List<Assignment> { assignments[0], assignments[2], assignments[4], assignments[6] };
-            students[11].Assignments = new List<Assignment> { assignments[1], assignments[5] };
-            students[12].Assignments = new List<Assignment> { assignments[3], assignments[7] };
-            students[13].Assignments = new List<Assignment> { assignments[1], assignments[5] };
-            students[14].Assignments = new List<Assignment> { assignments[0], assignments[4] };
-            students[15].Assignments = new List<Assignment> { assignments[0], assignments[4] };
-            students[16].Assignments = new List<Assignment> { assignments[2], assignments[6] };
-            students[17].Assignments = new List<Assignment> { assignments[1], assignments[5] };
-            students[18].Assignments = new List<Assignment> { assignments[3], assignments[7] };
-            students[19].Assignments = new List<Assignment> { assignments[2], assignments[6] };
+            students[0].Assignments = new HashSet<Assignment> { assignments[0], assignments[4] };
+            students[1].Assignments = new HashSet<Assignment> { assignments[1], assignments[2], assignments[5], assignments[6] };
+            students[2].Assignments = new HashSet<Assignment> { assignments[0], assignments[4] };
+            students[3].Assignments = new HashSet<Assignment> { assignments[1], assignments[2], assignments[5], assignments[6] };
+            students[4].Assignments = new HashSet<Assignment> { assignments[3], assignments[7] };
+            students[5].Assignments = new HashSet<Assignment> { assignments[3], assignments[7] };
+            students[6].Assignments = new HashSet<Assignment> { assignments[3], assignments[7] };
+            students[7].Assignments = new HashSet<Assignment> { assignments[2], assignments[6] };
+            students[8].Assignments = new HashSet<Assignment> { assignments[0], assignments[4] };
+            students[9].Assignments = new HashSet<Assignment> { assignments[3], assignments[7] };
+            students[10].Assignments = new HashSet<Assignment> { assignments[0], assignments[2], assignments[4], assignments[6] };
+            students[11].Assignments = new HashSet<Assignment> { assignments[1], assignments[5] };
+            students[12].Assignments = new HashSet<Assignment> { assignments[3], assignments[7] };
+            students[13].Assignments = new HashSet<Assignment> { assignments[1], assignments[5] };
+            students[14].Assignments = new HashSet<Assignment> { assignments[0], assignments[4] };
+            students[15].Assignments = new HashSet<Assignment> { assignments[0], assignments[4] };
+            students[16].Assignments = new HashSet<Assignment> { assignments[2], assignments[6] };
+            students[17].Assignments = new HashSet<Assignment> { assignments[1], assignments[5] };
+            students[18].Assignments = new HashSet<Assignment> { assignments[3], assignments[7] };
+            students[19].Assignments = new HashSet<Assignment> { assignments[2], assignments[6] };
         }
     }
 }

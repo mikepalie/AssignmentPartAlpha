@@ -12,8 +12,9 @@ namespace AssignmentPartAlpha
     {
         public void Start()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\t\t WELCOME TO THE CODING SCHOOL");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\t\t Welcome to the coding school");
             Console.WriteLine("Input Data manually (Press 1)");
             Console.WriteLine("Synthetic Data (Press 2)");
             Console.ResetColor();
@@ -25,42 +26,65 @@ namespace AssignmentPartAlpha
             ViewLists();
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("(Press 11): ");
-            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Create Student ");
-            Console.WriteLine("Create Trainer (Press 12)");
-            Console.WriteLine("Create Course (Press 13)");
-            Console.WriteLine("Create Assignment (Press 14)");
-            Console.WriteLine("Merge Students - Courses (Press 15)");
-            Console.WriteLine("Merge Trainers - Courses (Press 16)");
-            Console.WriteLine("Merge Assignments - Courses (Press 17)");
-            Console.WriteLine("Merge Assignments - Students (Press 18)");
+            Console.Write("(Press 12): ");
+            Console.WriteLine("Create Trainer ");
+            Console.Write("(Press 13): ");
+            Console.WriteLine("Create Course ");
+            Console.Write("(Press 14): ");
+            Console.WriteLine("Create Assignment ");
+            Console.Write("(Press 15): ");
+            Console.WriteLine("Merge Students - Courses ");
+            Console.Write("(Press 16): ");
+            Console.WriteLine("Merge Trainers - Courses ");
+            Console.Write("(Press 17): ");
+            Console.WriteLine("Merge Assignments - Courses ");
+            Console.Write("(Press 18): ");
+            Console.WriteLine("Merge Assignments - Students ");
+   
             Console.ResetColor();
         }
         public void ViewLists()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("View List of all Students (Press 1)");
-            Console.WriteLine("View List of all Trainers (Press 2)");
-            Console.WriteLine("View List of all Courses (Press 3)");
-            Console.WriteLine("View List of all Assignments (Press 4)");
-            Console.WriteLine("View all Students Per Course (Press 5)");
-            Console.WriteLine("View all Trainers Per Course (Press 6)");
-            Console.WriteLine("View all Assignments Per Course (Press 7)");
-            Console.WriteLine("View all Assignments Per Student (Press 8)");
-            Console.WriteLine("View all Students with more than one course (Press 9)");
-            Console.WriteLine("View all Students who need to submit one or more Assignments at a week (Press 10)");
-            Console.WriteLine("Exit (Press 0)");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("(Press 1): ");
+            Console.WriteLine("View List of all Students ");
+            Console.Write("(Press 2): ");
+            Console.WriteLine("View List of all Trainers ");
+            Console.Write("(Press 3): ");
+            Console.WriteLine("View List of all Courses ");
+            Console.Write("(Press 4): ");
+            Console.WriteLine("View List of all Assignments ");
+            Console.Write("(Press 5): ");
+            Console.WriteLine("View all Students Per Course ");
+            Console.Write("(Press 6): ");
+            Console.WriteLine("View all Trainers Per Course ");
+            Console.Write("(Press 7): ");
+            Console.WriteLine("View all Assignments Per Course ");
+            Console.Write("(Press 8): ");
+            Console.WriteLine("View all Assignments Per Student ");
+            Console.Write("(Press 9): ");
+            Console.WriteLine("View all Students with more than one course ");
+            Console.Write("(Press 10): ");
+            Console.WriteLine("View all Students who need to submit one or more Assignments at a week ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("(Press 0): ");
+            Console.WriteLine("Exit ");
             Console.ResetColor();
         }
 
-        public void PrintAllStudents(List<Student> students)
+        public void PrintAllStudents(HashSet<Student> students)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Students");
             Console.ResetColor();
 
             if(students.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("No Result Found!");
+                Console.ResetColor();
+            }
 
             foreach (var stu in students)
             {
@@ -76,14 +100,18 @@ namespace AssignmentPartAlpha
         }
 
 
-        public void PrintAllTrainers(List<Trainer> trainers)
+        public void PrintAllTrainers(HashSet<Trainer> trainers)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Trainers");
             Console.ResetColor();
 
             if (trainers.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("No Result Found!");
+                Console.ResetColor();
+            }
 
             foreach (var tra in trainers)
             {
@@ -97,14 +125,18 @@ namespace AssignmentPartAlpha
             }
         }
 
-        public void PrintAllCourses(List<Course> courses)
+        public void PrintAllCourses(HashSet<Course> courses)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Courses");
             Console.ResetColor();
 
             if (courses.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("No Result Found!");
+                Console.ResetColor();
+            }
 
             foreach (var cou in courses)
             {
@@ -120,14 +152,18 @@ namespace AssignmentPartAlpha
             }
         }
 
-        public void PrintAllAssignments(List<Assignment> assignments)
+        public void PrintAllAssignments(HashSet<Assignment> assignments)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Assignments");
             Console.ResetColor();
 
             if (assignments.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("No Result Found!");
+                Console.ResetColor();
+            }
 
             foreach (var asn in assignments)
             {
@@ -144,7 +180,7 @@ namespace AssignmentPartAlpha
         }
 
 
-        public void PrintStudentsPerCourse(List<Course> courses)
+        public void PrintStudentsPerCourse(HashSet<Course> courses)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Students Per Course");
@@ -167,13 +203,15 @@ namespace AssignmentPartAlpha
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("No Student Found!");
+                    Console.ResetColor();
                 }
                 
             }
         }
 
-        public void PrintTrainersPerCourse(List<Course> courses)
+        public void PrintTrainersPerCourse(HashSet<Course> courses)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Trainers Per Course");
@@ -197,12 +235,14 @@ namespace AssignmentPartAlpha
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("No Trainer Found!");
+                    Console.ResetColor();
                 }
             }
         }
 
-        public void PrintAssignmentsPerCourse(List<Course> courses)
+        public void PrintAssignmentsPerCourse(HashSet<Course> courses)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Assignments Per Course");
@@ -226,12 +266,14 @@ namespace AssignmentPartAlpha
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("No Assignment Found!");
+                    Console.ResetColor();
                 }
             }
         }
 
-        public void PrintAssignmentsPerStudent(List<Student> students)
+        public void PrintAssignmentsPerStudent(HashSet<Student> students)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Assignments Per Student");
@@ -255,12 +297,14 @@ namespace AssignmentPartAlpha
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("No Assignment Found!");
+                    Console.ResetColor();
                 }
             }
         }
 
-        public void PrintStudentsWithMoreThanOneCourse(List<Student> students)
+        public void PrintStudentsWithMoreThanOneCourse(HashSet<Student> students)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("==================================");
@@ -284,23 +328,31 @@ namespace AssignmentPartAlpha
             }
             if (!thereIs)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("No Results Found! ");
+                Console.ResetColor();
             }
         }
 
-        public void PrintStudentsSubmitingDay(List<Student> students)
+        public void PrintStudentsSubmitingDay(HashSet<Student> students)
         {
             DateTime dt = new DateTime(1111, 11, 11);
             string userInput = "";
             do
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Enter date(ex 2023-08-13): ");
+                Console.ResetColor();
                 userInput = Console.ReadLine();
 
                 if (Check.isDateTimeType(userInput))
                     DateTime.TryParse(userInput, out dt);
                 else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Please enter correct DateTime type :");
+                    Console.ResetColor();
+                }
 
             } while (!Check.isDateTimeType(userInput));
             
@@ -341,7 +393,9 @@ namespace AssignmentPartAlpha
                        assignment.SubDateTime.DayOfYear >= start &&
                        assignment.SubDateTime.DayOfYear <= end)
                     {
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine($"{student.LastName} {assignment.Title} {assignment.SubDateTime}");
+                        Console.ResetColor();
                         foundResult = true;
                     }
                    
@@ -350,11 +404,13 @@ namespace AssignmentPartAlpha
             }
             if (!foundResult)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("No Result Found!");
+                Console.ResetColor();
             }
         }
 
-        public void MergeStudentsCourses(List<Student> students, List<Course> courses)
+        public void MergeStudentsCourses(HashSet<Student> students, HashSet<Course> courses)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Choose from above Student and Course you want to merge");
@@ -434,17 +490,25 @@ namespace AssignmentPartAlpha
                 }
             }
             Console.ForegroundColor = ConsoleColor.Blue;
-            if(!studentFound)
+            if (!studentFound)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"No Student Found with id :{stuId}");
+                Console.ResetColor();
+            }
             if (!courseFound)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"No Course Found with id :{couId}");
+                Console.ResetColor();
+            }
 
             Console.ResetColor();
             Thread.Sleep(6000);
             Console.Clear();
         }
 
-        public void MergeTrainersCourses(List<Trainer> trainers, List<Course> courses)
+        public void MergeTrainersCourses(HashSet<Trainer> trainers, HashSet<Course> courses)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Choose from above Trainer and Course you want to merge");
@@ -452,18 +516,54 @@ namespace AssignmentPartAlpha
             PrintAllTrainers(trainers);
             PrintAllCourses(courses);
 
-            Console.WriteLine("Enter Trainer's Id :");
-            int traId = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Course's Id :");
-            int couId = Convert.ToInt32(Console.ReadLine());
+            // TrainerId
+            string input1 = "";
+            int traId = 0;
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Enter Trainer's Id :");
+                Console.ResetColor();
+                input1 = Console.ReadLine();
+                if (Check.isInt(input1))
+                    traId = Convert.ToInt32(input1);
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid Input! Please enter the number of Trainer's Id (ex. 13)");
+                    Console.ResetColor();
+                }
+            } while (!Check.isInt(input1));
+
+            // courseId
+            string input2 = "";
+            int couId = 0;
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Enter Course's Id :");
+                Console.ResetColor();
+                input2 = Console.ReadLine();
+                if (Check.isInt(input2))
+                    couId = Convert.ToInt32(input2);
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid Input! Please enter the number of Course's Id (ex. 13)");
+                    Console.ResetColor();
+                }
+            } while (!Check.isInt(input2));
 
             Trainer trainer1 = new Trainer();
+            bool trainerFound = false;
+            bool courseFound = false;
 
             foreach (var tra in trainers)
             {
                 if (traId == tra.TrainerId)
                 {
                     trainer1 = tra;
+                    trainerFound = true;
                 }
             }
 
@@ -472,11 +572,31 @@ namespace AssignmentPartAlpha
                 if (couId == course.CourseId)
                 {
                     course.Trainers.Add(trainer1);
+                    courseFound = true;
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine($"{course.Title} successfully merged with {trainer1.LastName}");
+                    Console.ResetColor();
+
+                    Thread.Sleep(2000);
+                    Console.Clear();
                 }
+            }
+
+            if (!trainerFound)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"No Trainer Found with id :{traId}");
+                Console.ResetColor();
+            }
+            if (!courseFound)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"No Course Found with id :{couId}");
+                Console.ResetColor();
             }
         }
 
-        public void MergeAssignmentsCourses(List<Assignment> assignments, List<Course> courses)
+        public void MergeAssignmentsCourses(HashSet<Assignment> assignments, HashSet<Course> courses)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Choose from above Assignment and Course you want to merge");
@@ -484,19 +604,55 @@ namespace AssignmentPartAlpha
             PrintAllAssignments(assignments);
             PrintAllCourses(courses);
 
-            Console.WriteLine("Enter Assignment's Id :");
-            int assId = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Course's Id :");
-            int couId = Convert.ToInt32(Console.ReadLine());
+            // AssignmentId
+            string input1 = "";
+            int assId = 0;
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Enter Assignment's Id :");
+                Console.ResetColor();
+                input1 = Console.ReadLine();
+                if (Check.isInt(input1))
+                    assId = Convert.ToInt32(input1);
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid Input! Please enter the number of Assignment's Id (ex. 13)");
+                    Console.ResetColor();
+                }
+            } while (!Check.isInt(input1));
+
+            // courseId
+            string input2 = "";
+            int couId = 0;
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Enter Course's Id :");
+                Console.ResetColor();
+                input2 = Console.ReadLine();
+                if (Check.isInt(input2))
+                    couId = Convert.ToInt32(input2);
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid Input! Please enter the number of Course's Id (ex. 13)");
+                    Console.ResetColor();
+                }
+            } while (!Check.isInt(input2));
+
 
             Assignment assignment1 = new Assignment();
-
+            bool assignmentFound = false;
+            bool courseFound = false;
 
             foreach (var ass in assignments)
             {
                 if (assId == ass.AssignmentId)
                 {
                     assignment1 = ass;
+                    assignmentFound = true;
                 }
             }
 
@@ -505,12 +661,32 @@ namespace AssignmentPartAlpha
                 if (couId == course.CourseId)
                 {
                     course.Assignments.Add(assignment1);
+                    courseFound = true;
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine($"{course.Title} successfully merged with {assignment1.Title}");
+                    Console.ResetColor();
+
+                    Thread.Sleep(2000);
+                    Console.Clear();
                 }
+            }
+
+            if (!assignmentFound)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"No Assignment Found with id :{assId}");
+                Console.ResetColor();
+            }
+            if (!courseFound)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"No Course Found with id :{couId}");
+                Console.ResetColor();
             }
 
         }
 
-        public void MergeAssignmentsStudents(List<Assignment> assignments, List<Student> students)
+        public void MergeAssignmentsStudents(HashSet<Assignment> assignments, HashSet<Student> students)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Choose from above Assignment and Student you want to merge");
@@ -518,18 +694,54 @@ namespace AssignmentPartAlpha
             PrintAllAssignments(assignments);
             PrintAllStudents(students);
 
-            Console.WriteLine("Enter Assignment's Id :");
-            int assId = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Student's Id :");
-            int stuId = Convert.ToInt32(Console.ReadLine());
+            // AssignmentId
+            string input1 = "";
+            int assId = 0;
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Enter Assignment's Id :");
+                Console.ResetColor();
+                input1 = Console.ReadLine();
+                if (Check.isInt(input1))
+                    assId = Convert.ToInt32(input1);
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid Input! Please enter the number of Assignment's Id (ex. 13)");
+                    Console.ResetColor();
+                }
+            } while (!Check.isInt(input1));
+
+            // StudentId
+            string input2 = "";
+            int stuId = 0;
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Enter Student's Id :");
+                Console.ResetColor();
+                input2 = Console.ReadLine();
+                if (Check.isInt(input2))
+                    stuId = Convert.ToInt32(input2);
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid Input! Please enter the number of Student's Id (ex. 13)");
+                    Console.ResetColor();
+                }
+            } while (!Check.isInt(input2));
 
             Assignment assignment1 = new Assignment();
+            bool assignmentFound = false;
+            bool studentFound = false;
 
             foreach (var ass in assignments)
             {
                 if (assId == ass.AssignmentId)
                 {
                     assignment1 = ass;
+                    assignmentFound = true;
                 }
             }
 
@@ -538,7 +750,27 @@ namespace AssignmentPartAlpha
                 if (stuId == stu.StudentId)
                 {
                     stu.Assignments.Add(assignment1);
+                    studentFound = true;
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine($"{stu.LastName} successfully merged with {assignment1.Title}");
+                    Console.ResetColor();
+
+                    Thread.Sleep(2000);
+                    Console.Clear();
                 }
+            }
+
+            if (!assignmentFound)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"No Assignment Found with id :{assId}");
+                Console.ResetColor();
+            }
+            if (!studentFound)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"No Student Found with id :{stuId}");
+                Console.ResetColor();
             }
         }
 

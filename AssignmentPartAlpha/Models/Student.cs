@@ -15,8 +15,8 @@ namespace AssignmentPartAlpha.Models
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public double TuitionFees { get; set; }
-        public  List<Course> Courses { get; set; }
-        public  List<Assignment> Assignments { get; set; }
+        public  HashSet<Course> Courses { get; set; }
+        public  HashSet<Assignment> Assignments { get; set; }
 
         public static Student CreateStudent()
         {
@@ -95,14 +95,14 @@ namespace AssignmentPartAlpha.Models
             } while (!Check.isDouble(tuition));
             
 
-            s1.Courses = new List<Course>();
-            s1.Assignments = new List<Assignment>();
+            s1.Courses = new HashSet<Course>();
+            s1.Assignments = new HashSet<Assignment>();
             s1.StudentId = nextId++;
            
 
             Console.Clear();
 
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Student created succesfully");
             Console.ResetColor();
             Thread.Sleep(2000);

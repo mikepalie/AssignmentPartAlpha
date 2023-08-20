@@ -22,7 +22,9 @@ namespace AssignmentPartAlpha
                 if (choiceOne < 1 || choiceOne > 2)
                 {
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Your choice should be 1 or 2 !");
+                    Console.ResetColor();
                     return false;
                 }
                 else
@@ -31,7 +33,9 @@ namespace AssignmentPartAlpha
             else
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Your input isn't a number !");
+                Console.ResetColor();
                 return false;
             }
         }
@@ -43,7 +47,9 @@ namespace AssignmentPartAlpha
                 if (choiceTwo < 0 || choiceTwo > 18)
                 {
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Your choice should between 0 to 18 !");
+                    Console.ResetColor();
                     return false;
                 }
                 else
@@ -52,7 +58,34 @@ namespace AssignmentPartAlpha
             else
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Your input isn't a number !");
+                Console.ResetColor();
+                return false;
+            }
+        }
+
+        public static bool isValidInput3(string str, out int choiceThree)
+        {
+            if (int.TryParse(str, out choiceThree))
+            {
+                if (choiceThree < 0 || choiceThree > 10)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Your choice should be between 0 to 10 !");
+                    Console.ResetColor();
+                    return false;
+                }
+                else
+                    return true;
+            }
+            else
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Your input isn't a number !");
+                Console.ResetColor();
                 return false;
             }
         }
@@ -75,6 +108,16 @@ namespace AssignmentPartAlpha
         public static bool isInt(string str)
         {
             return Int32.TryParse(str, out _);
+        }
+
+        public static bool isEndDateValid(DateTime start, DateTime end)
+        {
+            return (start.Year <= end.Year && start.DayOfYear <= end.DayOfYear);
+        }
+
+        public static bool isValidMark(int mark)
+        {
+            return (mark >= 0 && mark <= 100);
         }
     }
 }

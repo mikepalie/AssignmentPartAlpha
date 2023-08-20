@@ -12,10 +12,10 @@ namespace AssignmentPartAlpha
     {
         static void Main(string[] args)
         {
-            List<Student> students = new List<Student>();
-            List<Trainer> trainers = new List<Trainer>();
-            List<Course> courses = new List<Course>();
-            List<Assignment> assignments = new List<Assignment>();
+            HashSet<Student> students = new HashSet<Student>();
+            HashSet<Trainer> trainers = new HashSet<Trainer>();
+            HashSet<Course> courses = new HashSet<Course>();
+            HashSet<Assignment> assignments = new HashSet<Assignment>();
 
             Menu menu = new Menu();
             
@@ -67,7 +67,11 @@ namespace AssignmentPartAlpha
                             if (!Check.isEmptyList(courses))
                                 menu.PrintStudentsPerCourse(courses);
                             else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("No Courses Found!");
+                                Console.ResetColor();
+                            }
                             break;
 
                         case 6:
@@ -75,7 +79,11 @@ namespace AssignmentPartAlpha
                             if (!Check.isEmptyList(courses))
                                 menu.PrintTrainersPerCourse(courses);
                             else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("No Courses Found!");
+                                Console.ResetColor();
+                            }
                             break;
                             
                         case 7:
@@ -83,7 +91,11 @@ namespace AssignmentPartAlpha
                             if (!Check.isEmptyList(courses))
                                 menu.PrintAssignmentsPerCourse(courses);
                             else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("No Courses Found!");
+                                Console.ResetColor();
+                            }
                             break;
 
                         case 8:
@@ -91,20 +103,32 @@ namespace AssignmentPartAlpha
                             if(!Check.isEmptyList(students))
                                 menu.PrintAssignmentsPerStudent(students);
                             else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("No Students Found!");
+                                Console.ResetColor();
+                            }
                             break;
 
                         case 9:
                             if(!Check.isEmptyList(students))
                                 menu.PrintStudentsWithMoreThanOneCourse(students);
                             else
-                                Console.WriteLine("No Students Found");
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("No Students Found!");
+                                Console.ResetColor();
+                            }
                             break;
                         case 10:
                             if(!Check.isEmptyList(students))
                                 menu.PrintStudentsSubmitingDay(students);
                             else
-                                Console.WriteLine("No Students Found");
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("No Students Found!");
+                                Console.ResetColor();
+                            }
                             break;
                         case 11:
                             Student s1 = Student.CreateStudent();
@@ -144,27 +168,43 @@ namespace AssignmentPartAlpha
             else
             {
                 SyntheticData synthData = new SyntheticData();
-                students.AddRange(synthData.SyntheticStudents());
-                trainers.AddRange(synthData.SyntheticTrainers());
-                courses.AddRange(synthData.SyntheticCourses());
-                assignments.AddRange(synthData.SyntheticAssignments());
 
-                synthData.StudentsCourses(students, courses);
-                synthData.TrainersCourses(trainers, courses);
-                synthData.AssignmentsCourses(assignments, courses);
-                synthData.AssignmentsStudents(assignments, students);
+                List<Student> synthStudents = synthData.SyntheticStudents();
+                List<Course> synthCourses = synthData.SyntheticCourses();
+                List<Trainer> synthTrainers = synthData.SyntheticTrainers();
+                List<Assignment> synthAssignments = synthData.SyntheticAssignments();
 
+
+                synthData.StudentsCourses(synthStudents, synthCourses);
+                synthData.TrainersCourses(synthTrainers, synthCourses);
+                synthData.AssignmentsCourses(synthAssignments, synthCourses);
+                synthData.AssignmentsStudents(synthAssignments, synthStudents);
+
+                students.UnionWith(synthStudents);
+                trainers.UnionWith(synthTrainers);
+                courses.UnionWith(synthCourses);
+                assignments.UnionWith(synthAssignments);
+
+
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Synthetic Data successfully created!");
+                Console.ResetColor();
                 Thread.Sleep(2000);
 
                 Console.Clear();
 
                 int choiceThree;
+                bool isValid3 = false;
                 do
                 {
-                    menu.ViewLists();
-                    choiceThree = int.Parse(Console.ReadLine());
-                    Console.Clear();
+                    do
+                    {
+                        menu.ViewLists();
+
+                        isValid3 = Check.isValidInput3(Console.ReadLine(), out choiceThree);
+
+                    } while (!isValid3);
+                        Console.Clear();
                     switch (choiceThree)
                     {
                         case 1:

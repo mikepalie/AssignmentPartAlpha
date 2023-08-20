@@ -15,24 +15,59 @@ namespace AssignmentPartAlpha.Models
         public string LastName { get; set; }
 
         public string subject;
-        public List<Course> Courses { get; set; }
+        public HashSet<Course> Courses { get; set; }
 
         public static Trainer CreateTrainer()
         {
             Trainer t1 = new Trainer();
 
 
-            Console.WriteLine("Trainer's Firstname: ");
-            t1.FirstName = Console.ReadLine();
-            Console.WriteLine("Trainer's Lastname: ");
-            t1.LastName = Console.ReadLine();
+            // FirstName
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Trainer's Firstname: ");
+                Console.ResetColor();
+                t1.FirstName = Console.ReadLine();
+                if (!Check.isValidName(t1.FirstName))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Only letters A-Z allowed: ");
+                    Console.ResetColor();
+                    Thread.Sleep(2000);
+                }
+            } while (!Check.isValidName(t1.FirstName));
+
+            // LastName
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Trainer's Lastname: ");
+                Console.ResetColor();
+                t1.LastName = Console.ReadLine();
+                if (!Check.isValidName(t1.LastName))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Only letters A-Z allowed: ");
+                    Console.ResetColor();
+                    Thread.Sleep(2000);
+                }
+            } while (!Check.isValidName(t1.LastName));
+
+            // Subject
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Trainer's Subject: ");
+            Console.ResetColor();
             t1.subject = Console.ReadLine();
+
+
             t1.TrainerId = nextId++;
 
             Console.Clear();
 
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Trainer created succesfully");
+            Console.ResetColor();
             Thread.Sleep(2000);
 
             Console.Clear();
